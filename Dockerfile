@@ -1,8 +1,8 @@
 FROM abiosoft/caddy:no-stats
 
-ARG hugo_version=0.55.6
+ARG hugo_version=0.92.1
 
-RUN apk add --no-cache openssh-client git tar curl
+RUN apk add --no-cache openssh-client git tar curl && apk upgrade
 
 RUN curl --silent --show-error --fail --location \
   --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
@@ -17,4 +17,4 @@ WORKDIR /www
 
 COPY Caddyfile /etc/Caddyfile
 
-ENV REPO github.com/spf13/spf13.com
+ENV REPO github.com/moadibfr/moadib

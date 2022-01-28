@@ -4,6 +4,7 @@
     # sync the repo and then gen public site
     git {
         repo {$REPO}
+        branch main
         path ../src
         hook /webhook
         args --recurse-submodules
